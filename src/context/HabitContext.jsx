@@ -3,20 +3,6 @@ import React, { createContext, useState, useEffect } from "react";
 export const HabitContext = createContext();
 
 export function HabitProvider({ children }) {
-  const [habits, setHabits] = useState(() => {
-    const storedHabits = localStorage.getItem("habits");
-    if (storedHabits) {
-      try {
-        return JSON.parse(storedHabits);
-      } catch (e) {
-        console.error("Failed to parse stored habits:", e);
-        return getDefaultHabits();
-      }
-    } else {
-      return getDefaultHabits();
-    }
-  });
-
   const getDefaultHabits = () => {
     const today = new Date().toISOString().split("T")[0];
     return [
@@ -55,8 +41,25 @@ export function HabitProvider({ children }) {
     ];
   };
 
+  const [habits, setHabits] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedHabits = localStorage.getItem("habits");
+      if (storedHabits) {
+        try {
+          return JSON.parse(storedHabits);
+        } catch (e) {
+          console.error("Failed to parse stored habits:", e);
+          return getDefaultHabits();
+        }
+      }
+    }
+    return getDefaultHabits();
+  });
+
   useEffect(() => {
-    localStorage.setItem("habits", JSON.stringify(habits));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("habits", JSON.stringify(habits));
+    }
   }, [habits]);
 
   return (
