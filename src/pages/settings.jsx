@@ -15,7 +15,7 @@ function SettingsView() {
           Settings Coming Soon
         </h3>
         <p className="text-gray-600">
-          We're working on adding more customization options!
+          working on adding more customization options!
         </p>
       </div>
     </div>

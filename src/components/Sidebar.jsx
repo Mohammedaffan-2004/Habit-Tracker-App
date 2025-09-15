@@ -76,9 +76,6 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
         <nav className="flex-1 px-4 py-6 overflow-y-auto">
           <div className="mb-6">
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-2">
-              Main Menu
-            </h3>
             {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;

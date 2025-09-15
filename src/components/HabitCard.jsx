@@ -117,7 +117,7 @@ function HabitCard({ habit, onToggle, onDelete }) {
                 }`}
               >
                 {isCompleted ? (
-                  <Tooltip title="Habit">
+                  <Tooltip title="Habit Completed Today">
                     {" "}
                     <FiCheckCircle className="w-8 h-8" />
                   </Tooltip>
@@ -163,13 +163,13 @@ function HabitCard({ habit, onToggle, onDelete }) {
                 onClick={() => setShowEditForm(true)}
                 className="p-3 text-gray-400 hover:text-indigo-500 hover:bg-indigo-50 rounded-lg transition-all"
               >
-                <FaRegEdit className="w-5 h-5" />
+                <FaRegEdit className="w-5 h-5 cursor-pointer" />
               </button>
               <button
                 onClick={() => onDelete(habit.id)}
                 className="p-3 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all"
               >
-                <LuTrash2 className="w-5 h-5" />
+                <LuTrash2 className="w-5 h-5 cursor-pointer" />
               </button>
             </div>
           </div>
@@ -253,7 +253,7 @@ function HabitCard({ habit, onToggle, onDelete }) {
 
           <button
             onClick={handleViewDetails}
-            className="mt-4 w-full py-2.5 text-white rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+            className="mt-4 w-full py-2.5 text-white rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2 cursor-pointer"
             style={{ backgroundColor: habit.color }}
           >
             View Details

@@ -51,13 +51,19 @@ function Dashboard() {
       return "Every journey begins with a single step. Start today!";
     if (streak === 1) return "Great start! One day down, keep going!";
     if (streak <= 3)
-      return `🔥 You're on a ${streak}-day streak! Building momentum!`;
+      return `🔥 You're on a ${streak}-day streak! Small steps make big changes.`;
+    if (streak <= 5) return `🚀 ${streak} days in! Keep the energy flowing!`;
     if (streak <= 7)
-      return `🔥 ${streak} days in a row! You're building a great habit!`;
+      return `🔥 ${streak} days strong! You're building serious momentum!`;
+    if (streak <= 10)
+      return `💪 ${streak} days! Discipline > motivation — and you're showing it!`;
     if (streak <= 14)
-      return `🔥 ${streak} days! Your consistency is paying off!`;
-    if (streak <= 30) return `🔥 ${streak} days! You're unstoppable!`;
-    return `🔥 ${streak} days! You're a habit master!`;
+      return `🔥 ${streak} days! You’ve got the mindset of a winner!`;
+    if (streak <= 21)
+      return `🔥 ${streak} days! You’re rewiring your habits. Keep pushing!`;
+    if (streak <= 30)
+      return `🚀 ${streak} days! You’re creating a lifestyle, not just a streak!`;
+    return `🏆 ${streak} days! You're a habit legend in the making!`;
   };
 
   const getBestStreak = () => {
@@ -125,7 +131,7 @@ function Dashboard() {
         </div>
         <button
           onClick={() => setShowAddForm(true)}
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:from-indigo-700 hover:to-purple-700 transition-all flex items-center gap-2 shadow-lg"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:from-indigo-700 hover:to-purple-700 transition-all flex items-center gap-2 shadow-lg cursor-pointer"
         >
           <BsPlusLg className="w-5 h-5" /> Add Habit
         </button>
