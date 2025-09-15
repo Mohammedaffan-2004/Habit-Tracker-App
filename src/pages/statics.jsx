@@ -108,10 +108,10 @@ function StatisticsView() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-gradient-to-br from-red-500 to-pink-600 p-6 rounded-2xl text-white shadow-lg">
+        <div className="bg-gradient-to-br from-blue-900 to-indigo-800 p-6 rounded-2xl text-white shadow-lg">
           <div className="flex items-center justify-between mb-4">
             <BsFire className="w-8 h-8 text-red-100" />
-            <span className="text-sm bg-red-400 bg-opacity-30 px-2 py-1 rounded-full">
+            <span className="text-sm bg-blue-400 bg-opacity-30 px-2 py-1 rounded-full">
               KPI
             </span>
           </div>
@@ -141,20 +141,19 @@ function StatisticsView() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 ">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             Weekly Habit Completion
           </h3>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={280}>
             <PieChart>
               <Pie
                 data={habitWeeklyData}
                 cx="50%"
                 cy="50%"
-                innerRadius={60}
-                outerRadius={120}
+                innerRadius={50}
+                outerRadius={90}
                 dataKey="value"
-                name="Completion Rate"
                 label={({ name, completed, total }) =>
                   `${name}: ${completed}/${total}`
                 }
@@ -163,6 +162,7 @@ function StatisticsView() {
                   <Cell key={`cell-${index}`} fill={entry.color} />
                 ))}
               </Pie>
+
               <Tooltip
                 contentStyle={{
                   backgroundColor: "white",
@@ -174,6 +174,7 @@ function StatisticsView() {
                   name,
                 ]}
               />
+
               <Legend />
             </PieChart>
           </ResponsiveContainer>
