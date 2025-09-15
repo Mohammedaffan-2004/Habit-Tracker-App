@@ -2,12 +2,15 @@ import React, { useState, useContext } from "react";
 import { HiChevronRight } from "react-icons/hi";
 import { HiChevronLeft } from "react-icons/hi";
 import { HabitContext } from "../context/HabitContext";
+import { useNavigate } from "react-router-dom";
+import { ImArrowLeft2 } from "react-icons/im";
 
 function CalendarView() {
   const { habits, setHabits } = useContext(HabitContext);
   const [selectedHabit, setSelectedHabit] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const today = new Date().toISOString().split("T")[0];
+  const navigate = useNavigate();
 
   const toggleCompletion = (habitId, date) => {
     setHabits((prev) =>
@@ -47,8 +50,16 @@ function CalendarView() {
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-4 sm:p-6 text-white shadow-lg">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold">Calendar</h1>
-            <p className="opacity-90 mt-1 text-sm sm:text-base">
+            <h1 className="text-2xl sm:text-3xl font-bold flex gap-3">
+              <button
+                onClick={() => navigate("/")}
+                className="p-2  hover:text-black rounded-lg transition-colors cursor-pointer"
+              >
+                <ImArrowLeft2 className="w-5 h-5" />
+              </button>
+              Calendar
+            </h1>
+            <p className="opacity-90 mt-1 text-sm sm:text-base ml-10">
               Track your daily progress
             </p>
           </div>

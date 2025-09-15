@@ -1,12 +1,28 @@
 import React from "react";
 import { CiSettings } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
+import { ImArrowLeft2 } from "react-icons/im";
 
 function SettingsView() {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-8">
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
-        <h1 className="text-3xl font-bold mb-2">Settings</h1>
-        <p className="opacity-90">Manage your preferences</p>
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold flex gap-3">
+            <button
+              onClick={() => navigate("/")}
+              className="p-2  hover:text-black rounded-lg transition-colors cursor-pointer"
+            >
+              <ImArrowLeft2 className="w-5 h-5" />
+            </button>
+            Settings
+          </h1>
+          <p className="opacity-90 mt-1 text-sm sm:text-base ml-10">
+            Manage your preferences
+          </p>
+        </div>
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">

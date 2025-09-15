@@ -14,11 +14,14 @@ import {
 } from "recharts";
 import { BsFire } from "react-icons/bs";
 import { FiAward } from "react-icons/fi";
+import { ImArrowLeft2 } from "react-icons/im";
 import { GrAchievement } from "react-icons/gr";
 import { HabitContext } from "../context/HabitContext";
+import { useNavigate } from "react-router-dom";
 
 function StatisticsView() {
   const { habits } = useContext(HabitContext);
+  const navigate = useNavigate();
 
   const getCurrentStreak = (habit) => {
     let streak = 0;
@@ -103,12 +106,24 @@ function StatisticsView() {
   return (
     <div className="space-y-8">
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
-        <h1 className="text-3xl font-bold mb-2">Statistics</h1>
-        <p className="opacity-90">Track your progress and achievements</p>
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold flex gap-3">
+            <button
+              onClick={() => navigate("/")}
+              className="p-2  hover:text-black rounded-lg transition-colors cursor-pointer"
+            >
+              <ImArrowLeft2 className="w-5 h-5" />
+            </button>
+            Statistics
+          </h1>
+          <p className="opacity-90 mt-1 text-sm sm:text-base ml-10">
+            Track your progress and achievements
+          </p>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-gradient-to-br from-blue-900 to-indigo-800 p-6 rounded-2xl text-white shadow-lg">
+        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl text-white shadow-lg">
           <div className="flex items-center justify-between mb-4">
             <BsFire className="w-8 h-8 text-red-100" />
             <span className="text-sm bg-blue-400 bg-opacity-30 px-2 py-1 rounded-full">
