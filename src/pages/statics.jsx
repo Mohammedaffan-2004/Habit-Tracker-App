@@ -104,7 +104,7 @@ function StatisticsView() {
   const monthlyBarData = getMonthlyBarData();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 mt-15 sm:mt-0">
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold flex gap-3">

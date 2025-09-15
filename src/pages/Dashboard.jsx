@@ -115,7 +115,7 @@ function Dashboard() {
   const recentActivity = getLast7DaysActivity();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 mt-15 sm:mt-0">
       <div className="flex justify-between items-start">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
