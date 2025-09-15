@@ -416,7 +416,7 @@ function Dashboard() {
       <div className="flex justify-between items-start">
         <div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Good morning, Affan
+            Hi Welcome Back, Affan
           </h1>
           <p className="text-gray-600">
             {new Date().toLocaleDateString("en-US", {

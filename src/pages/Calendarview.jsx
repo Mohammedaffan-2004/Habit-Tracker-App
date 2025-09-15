@@ -44,45 +44,54 @@ function CalendarView() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
-        <div className="flex items-center justify-between">
+      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-4 sm:p-6 text-white shadow-lg">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          {/* Left Side */}
           <div>
-            <h1 className="text-3xl font-bold">Calendar</h1>
-            <p className="opacity-90 mt-1">Track your daily progress</p>
+            <h1 className="text-2xl sm:text-3xl font-bold">Calendar</h1>
+            <p className="opacity-90 mt-1 text-sm sm:text-base">
+              Track your daily progress
+            </p>
           </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() =>
-                setCurrentMonth(
-                  new Date(
-                    currentMonth.getFullYear(),
-                    currentMonth.getMonth() - 1
+
+          {/* Right Side: Buttons and Date */}
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <div className="flex gap-2">
+              <button
+                onClick={() =>
+                  setCurrentMonth(
+                    new Date(
+                      currentMonth.getFullYear(),
+                      currentMonth.getMonth() - 1
+                    )
                   )
-                )
-              }
-              className="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all text-black"
-            >
-              <HiChevronLeft className="w-5 h-5" />
-            </button>
-            <div className="text-lg font-semibold min-w-[200px] text-center">
+                }
+                className="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all text-black"
+              >
+                <HiChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() =>
+                  setCurrentMonth(
+                    new Date(
+                      currentMonth.getFullYear(),
+                      currentMonth.getMonth() + 1
+                    )
+                  )
+                }
+                className="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all text-black"
+              >
+                <HiChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Date */}
+            <div className="text-base sm:text-lg font-semibold text-center min-w-[150px]">
               {currentMonth.toLocaleDateString("en-US", {
                 month: "long",
                 year: "numeric",
               })}
             </div>
-            <button
-              onClick={() =>
-                setCurrentMonth(
-                  new Date(
-                    currentMonth.getFullYear(),
-                    currentMonth.getMonth() + 1
-                  )
-                )
-              }
-              className="p-2 rounded-lg bg-white bg-opacity-20 hover:bg-opacity-30 transition-all text-black"
-            >
-              <HiChevronRight className="w-5 h-5" />
-            </button>
           </div>
         </div>
       </div>
