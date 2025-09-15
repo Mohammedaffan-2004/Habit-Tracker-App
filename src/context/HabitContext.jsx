@@ -33,7 +33,7 @@ export function HabitProvider({ children }) {
       {
         id: 4,
         name: "Drink Water",
-        description: "8 glasses daily",
+        description: "10 glasses daily",
         category: "Health",
         color: "#06B6D4",
         completions: { [today]: false },

@@ -4,9 +4,9 @@ import { CiSettings } from "react-icons/ci";
 function SettingsView() {
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Settings</h1>
-        <p className="text-gray-600">Manage your preferences</p>
+      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg">
+        <h1 className="text-3xl font-bold mb-2">Settings</h1>
+        <p className="opacity-90">Manage your preferences</p>
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
